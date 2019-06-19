@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.580303511597526 -0.812489061980966 0.055761622903837654 6.047745432373489
-  position 0.7856167198433277 0.6021769877308983 1.560716740290043
+  orientation -0.00029875004620771986 0.9995685411042399 0.029370774302890472 3.1212587764139648
+  position 0.7746582115828533 0.678278429105769 -1.6523192591011644
 }
 TexturedBackground {
 }
@@ -84,7 +84,7 @@ Solid {
           }
           endPoint Solid {
             translation 0.5004375822731715 0.92 -0.15475808730044477
-            rotation 0 -1 0 2.07581684714679
+            rotation 0 1 0 3.141592653589793
             children [
               Shape {
                 appearance PBRAppearance {
@@ -95,6 +95,44 @@ Solid {
                 geometry Box {
                   size 0.2 0.05 0.05
                 }
+              }
+              Solid {
+                children [
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      anchor 0 -0.225 0
+                    }
+                    endPoint Solid {
+                      translation 0 -0.225 0
+                      children [
+                        Shape {
+                          appearance DEF NUEVO PBRAppearance {
+                            baseColor 0.5411764705882353 0.8862745098039215 0.20392156862745098
+                            roughness 1
+                            metalness 0
+                          }
+                          geometry Cylinder {
+                            height 0.4
+                            radius 0.04
+                          }
+                        }
+                        Transform {
+                          translation 0 -0.2 0
+                          children [
+                            Shape {
+                              appearance USE NUEVO
+                              geometry Sphere {
+                                radius 0.06999999999999999
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                      physics Physics {
+                      }
+                    }
+                  }
+                ]
               }
             ]
             physics Physics {
