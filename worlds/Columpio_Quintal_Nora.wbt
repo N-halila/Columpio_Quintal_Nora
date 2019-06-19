@@ -1,14 +1,83 @@
 #VRML_SIM R2019a utf8
 WorldInfo {
-  info [
-  ]
 }
 Viewpoint {
-  orientation -0.7 0.7 0.2 0.75
-  position 1.2 1.6 2.3
-
+  orientation -0.005630911842381973 0.9891259014064894 0.14696341040756744 3.065832075185485
+  position 0.3661797688284859 1.1330101739439236 -3.275006646731175
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
+}
+Floor {
+}
+Solid {
+  children [
+    Group {
+      children [
+        DEF A Group {
+          children [
+            DEF P1 Transform {
+              translation 0 0.48 -0.00259
+              rotation 1 0 0 6.02
+              children [
+                Shape {
+                  appearance DEF BASE PBRAppearance {
+                    baseColor 0.9882352941176471 0.6862745098039216 0.24313725490196078
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF BOX1 Box {
+                    size 0.1 1 0.05
+                  }
+                }
+              ]
+            }
+            DEF P2 Transform {
+              translation 0 0.48 -0.3
+              rotation 1 0 0 0.262
+              children [
+                Shape {
+                  appearance USE BASE
+                  geometry USE BOX1
+                }
+              ]
+            }
+            DEF CYL_MEDIO Transform {
+              translation 0 0.5 -0.155
+              rotation 1 0 0 1.57
+              children [
+                DEF CYL_MEDIO Shape {
+                  appearance USE BASE
+                  geometry Cylinder {
+                    height 0.275
+                    radius 0.04
+                  }
+                }
+              ]
+            }
+          ]
+        }
+        DEF COPY_A Transform {
+          translation 1 0 0
+          children [
+            USE A
+          ]
+        }
+        Transform {
+          translation 0.5000000023015511 0.9800000004315412 -0.155
+          rotation 0 0 1 1.5707963220000003
+          children [
+            Shape {
+              appearance USE BASE
+              geometry Cylinder {
+                height 1.1
+                radius 0.04
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
