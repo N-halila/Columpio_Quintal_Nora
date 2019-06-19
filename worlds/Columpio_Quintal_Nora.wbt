@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.005630911842381973 0.9891259014064894 0.14696341040756744 3.065832075185485
-  position 0.3661797688284859 1.1330101739439236 -3.275006646731175
+  orientation -0.580303511597526 -0.812489061980966 0.055761622903837654 6.047745432373489
+  position 0.7856167198433277 0.6021769877308983 1.560716740290043
 }
 TexturedBackground {
 }
@@ -64,7 +64,7 @@ Solid {
             USE A
           ]
         }
-        Transform {
+        DEF BAR Transform {
           translation 0.5000000023015511 0.9800000004315412 -0.155
           rotation 0 0 1 1.5707963220000003
           children [
@@ -76,6 +76,30 @@ Solid {
               }
             }
           ]
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            axis 0 1 0
+            anchor 0.5 0.9400000000000001 -0.155
+          }
+          endPoint Solid {
+            translation 0.5004375822731715 0.92 -0.15475808730044477
+            rotation 0 -1 0 2.07581684714679
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.9372549019607843 0.1607843137254902 0.1607843137254902
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.2 0.05 0.05
+                }
+              }
+            ]
+            physics Physics {
+            }
+          }
         }
       ]
     }
